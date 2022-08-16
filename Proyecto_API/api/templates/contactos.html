@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <form method="post" class="post-form" action="{% url 'form' %}"> {% csrf_token %}
+        <section class="form-register">
+            <h4>Formulario Actualización De Datos Hubspot</h4>
+            <input class="controls" type="text" name="nombre" id="nombres" placeholder="Ingrese su Nombre">
+            <input class="controls" type="text" name="lastname" id="apellidos" placeholder="Ingrese su Apellido">
+            <input class="controls" type="email" name="email" id="correo" placeholder="Ingrese su Correo">
+            <input class="controls" type="text" name="phone" id="correo" placeholder="Ingrese su Celular">
+            <p>Estoy de acuerdo con <a href="{%url 'terminos' %}" target="_blank">Terminos y Condiciones</a></p>
+            <input class="botons" type="submit" value="Enviar">
+            <p><a href="{% url 'eliminar' %}">¿Deseas Cancelar Tu Cuenta De Hubspot?</a></p>
+          </section>
+    </form>
+    
+</body>
+</html>
